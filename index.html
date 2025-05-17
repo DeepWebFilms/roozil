@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Jamie Gaffney</title>
-  </head>
-  <body style="background-color: black; color: white; text-align: center; font-family: Arial, sans-serif; padding-top: 100px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" alt="F1 Logo" style="max-width: 200px;">
-    <h1>Jamie Gaffney, Future Formula 1 Engineer</h1>
-    <p>Huge fan of Alex Dunne and Lewis Hamilton</p>
-  </body>
-</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jamie Gaffney</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(-45deg, #000000, #1a1a1a, #330000, #990000);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: white;
+      text-align: center;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    img {
+      max-width: 200px;
+      filter: drop-shadow(0 0 10px red);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2
