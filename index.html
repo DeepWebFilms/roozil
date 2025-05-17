@@ -5,24 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jamie Gaffney</title>
   <style>
+    /* Animated gradient background */
     body {
       margin: 0;
+      padding: 0;
       height: 100vh;
-      background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #4a0000, #300000);
-      background-size: 400% 400%;
-      animation: gradient 20s ease infinite;
+      font-family: Arial, sans-serif;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
       color: white;
-      overflow: hidden;
+      background: linear-gradient(-45deg, #000000, #1a1a1a, #330000, #990000);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
     }
 
-    @keyframes gradient {
+    @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    .
+    img {
+      max-width: 200px;
+      filter: drop-shadow(0 0 10px red);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 10px 0;
+      text-shadow: 0 0 10px #ff0000;
+    }
+
+    p {
+      font-size: 1.2rem;
+      opacity:
