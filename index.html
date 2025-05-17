@@ -29,34 +29,40 @@
 
     img {
       max-width: 200px;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 0 10px red);
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 20px red); /* Stronger red glow */
     }
 
     h1 {
       font-size: 2rem;
-      margin: 0;
-      text-shadow: 0 0 10px #ff0000;
+      margin: 0 0 15px;
+      text-shadow: 0 0 5px #ff0000, 0 0 15px #ff0000, 0 0 30px #990000; /* Neon glow */
     }
 
     p {
       font-size: 1.2rem;
-      margin: 10px 0;
-      opacity: 0.9;
+      margin: 6px 0;
+      opacity: 0.95;
     }
 
-    .coming-soon {
-      margin-top: 30px;
-      font-size: 1.1rem;
-      color: #ffcccc;
-      font-style: italic;
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" alt="F1 Logo" />
-  <h1>Jamie Gaffney, Future Formula 1 Engineer</h1>
-  <p>Huge fan of Alex Dunne and Lewis Hamilton</p>
-  <p class="coming-soon">Coming to a racetrack near you soon</p>
+
+  <h1>Jamie Gaffney</h1>
+  <p>Future F1 Engineer</p>
+  <p>Based in Dublin, Ireland</p>
+  <p>Idols – James Vowles, Lewis Hamilton, Alex Dunne</p>
+  <p>Coming to a racetrack near you</p>
 </body>
 </html>
+
