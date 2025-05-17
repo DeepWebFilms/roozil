@@ -7,13 +7,18 @@
   <style>
     body {
       margin: 0;
+      padding: 0;
+      min-height: 100vh;
       background: linear-gradient(-45deg, #000000, #1a1a1a, #330000, #990000);
       background-size: 400% 400%;
       animation: gradient 15s ease infinite;
       font-family: Arial, sans-serif;
       color: white;
       text-align: center;
-      padding-top: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     @keyframes gradient {
@@ -36,17 +41,22 @@
 
     p {
       font-size: 1.2rem;
-      margin-top: 10px;
+      margin: 10px 0;
       opacity: 0.9;
     }
 
     .coming-soon {
-      margin-top: 40px;
-      font-size: 1rem;
+      margin-top: 30px;
+      font-size: 1.1rem;
       color: #ffcccc;
       font-style: italic;
     }
   </style>
 </head>
 <body>
-  <img src="
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg" alt="F1 Logo" />
+  <h1>Jamie Gaffney, Future Formula 1 Engineer</h1>
+  <p>Huge fan of Alex Dunne and Lewis Hamilton</p>
+  <p class="coming-soon">Coming to a racetrack near you soon</p>
+</body>
+</html>
