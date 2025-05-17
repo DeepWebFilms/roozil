@@ -3,256 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jamie Gaffney - Future F1 Engineer</title>
+  <title>Jamie Gaffney</title>
   <style>
-    /* Reset some default margins for consistency */
+    /* Background animation */
     body {
       margin: 0;
-      background: #fdfdfd;
-      color: #333;
-      font-family: sans-serif;
-      overflow-x: hidden; /* prevent horizontal scroll from off-screen elements */
-    }
-    header {
-      background: #000; /* black header for F1 theme */
-      color: #fff;
-      text-align: center;
-      padding: 1rem 1rem 1.5rem;
-      position: relative;
-    }
-    header img#f1logo {
-      vertical-align: middle;
-      height: 50px;
-      /* Add some margin after logo */
-      margin-right: 0.5rem;
-    }
-    header h1 {
-      display: inline-block;
-      font-size: 1.5rem;
-      margin: 0;
-      vertical-align: middle;
-    }
-    header p {
-      font-size: 0.95rem;
-      margin: 0.3rem 0 0;
-      opacity: 0.8;
-    }
-    /* Toggle switch styling */
-    .switch {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-      /* Large touch area */
-      width: 60px;
-      height: 34px;
-    }
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: #ccc;
-      border-radius: 34px;
-      transition: background-color 0.3s;
-    }
-    .slider:before {
-      content: "";
-      position: absolute;
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      border-radius: 50%;
-      transition: transform 0.3s;
-    }
-    input:checked + .slider {
-      background-color: #2196F3; /* color when ON (blue) */
-    }
-    input:checked + .slider:before {
-      transform: translateX(26px);
-    }
-    /* Label for the switch (could add text icon if desired) */
-    .switch-label {
-      position: fixed;
-      top: 20px;
-      right: 88px; /* position text to the left of the switch */
-      font-size: 0.9rem;
-      color: #fff;
-      font-family: sans-serif;
-      background: #000;
-      padding: 4px 6px;
-      border-radius: 4px;
-      /* Optional: slight transparency */
-      opacity: 0.7;
+      height: 100vh;
+      background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #4a0000, #300000);
+      background-size: 400% 400%;
+      animation: gradient 20s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      overflow: hidden;
     }
 
-    /* Center content section */
-    main {
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    button#startButton {
-      background: #d32f2f; /* Ferrari red-ish button */
-      color: #fff;
-      font-size: 1.2rem;
-      font-weight: bold;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      transition: background 0.3s;
-    }
-    button#startButton:hover {
-      background: #c12727;
-    }
-    button#startButton:active {
-      background: #a52020;
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    /* Animated car and flag */
-    img#car {
-      position: fixed;
-      bottom: 20px;
-      left: -200px; /* start off-screen to the left */
-      width: 20vw;
-      max-width: 200px;
-      /* If needed, you can adjust height or use auto for aspect ratio */
-      /* pointer-events: none to allow clicks through if overlapping? (optional) */
-      pointer-events: none;
-      z-index: 500;
-    }
-    img#flag {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 60px;
-      /* Set transform origin to left-center (flagpole side) for waving effect */
-      transform-origin: left center;
-      z-index: 500;
-    }
-
-    /* Keyframe animations */
-    @keyframes drive {
-      from { left: -250px; }
-      to { left: 100%; }
-    }
-    @keyframes wave {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(10deg); }
-      100% { transform: rotate(0deg); }
-    }
-
-    /* Classes to trigger animations */
-    .drive {
-      animation: drive 3s linear forwards;
-    }
-    .waving {
-      animation: wave 1.5s ease-in-out infinite alternate;
-    }
-
-    /* If animations are disabled, override to stop them */
-    body.no-anim img#car.drive, 
-    body.no-anim img#waving {
-      /* Remove animations if in no-anim mode */
-      animation: none !important;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.2rem;
-      }
-      header p {
-        font-size: 0.85rem;
-      }
-      /* The button fills more width on small screens */
-      button#startButton {
-        width: 80%;
-        max-width: 300px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- Header with F1 logo and title -->
-  <header>
-    <img id="f1logo" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/F1_(registered_trademark).svg" alt="Formula 1 Logo" />
-    <div style="display:inline-block; text-align:left;">
-      <h1>Jamie Gaffney, future Formula 1 engineer</h1>
-      <p>From Dublin, Ireland. Favorite drivers: Lewis Hamilton and Alex Dunne.</p>
-    </div>
-    <!-- Toggle switch for animations -->
-    <span class="switch-label">Animations</span>
-    <label class="switch">
-      <input type="checkbox" id="animToggle" checked>
-      <span class="slider"></span>
-    </label>
-  </header>
-
-  <!-- Main content with Start Engine button -->
-  <main>
-    <button id="startButton">Start Engine</button>
-  </main>
-
-  <!-- Hidden/preloaded audio for engine sound -->
-  <audio id="engineSound" src="https://soundbible.com/mp3/Car-Accelerating-SoundBible.com-28596349.mp3" preload="auto"></audio>
-
-  <!-- Car and flag images (initially static/off-screen) -->
-  <img id="car" src="https://twemoji.maxcdn.com/v/latest/svg/1f3ce.svg" alt="F1 Car" />
-  <img id="flag" src="https://twemoji.maxcdn.com/v/latest/svg/1f3c1.svg" alt="Checkered Flag" />
-
-  <script>
-    // Get references to elements
-    const startButton = document.getElementById('startButton');
-    const engineSound = document.getElementById('engineSound');
-    const car = document.getElementById('car');
-    const flag = document.getElementById('flag');
-    const animToggle = document.getElementById('animToggle');
-
-    // Helper function to start animations if enabled
-    function startAnimations() {
-      // Play the engine sound (allowed since it's on a user click)
-      try { engineSound.currentTime = 0; } catch(e) {}
-      engineSound.play();
-      // If animations are toggled off, do nothing else
-      if (!animToggle.checked) return;
-      // If already animating, reset for restart
-      car.classList.remove('drive');
-      flag.classList.remove('waving');
-      // Trigger reflow to restart animation (if needed)
-      void car.offsetWidth;
-      // Add classes to start animations
-      car.classList.add('drive');
-      flag.classList.add('waving');
-    }
-
-    // Button click event: start engine effects
-    startButton.addEventListener('click', startAnimations);
-
-    // Toggle change event: enable/disable animations in real-time
-    animToggle.addEventListener('change', function() {
-      if (animToggle.checked) {
-        // Animations enabled
-        document.body.classList.remove('no-anim');
-      } else {
-        // Animations disabled: stop any ongoing animations
-        document.body.classList.add('no-anim');
-        // Remove animation classes to reset elements
-        car.classList.remove('drive');
-        flag.classList.remove('waving');
-        // Immediately reset car position off-screen
-        car.style.left = '-200px';
-      }
-    });
-  </script>
-</body>
-</html>
-
+    /* Glass card styling */
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
 
